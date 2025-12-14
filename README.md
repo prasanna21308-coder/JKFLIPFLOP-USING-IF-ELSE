@@ -34,38 +34,39 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-Connect the circuit on the breadboard/kit using the JK flip-flop IC (e.g., 7476/7473/4027).
+1.Connect the circuit on the breadboard/kit using the JK flip-flop IC (e.g., 7476/7473/4027).
 
-Give the power supply of +5V and ground to the IC.
+2.Give the power supply of +5V and ground to the IC.
 
-Connect the clock input to the clock generator or pulse switch.
+3.Connect the clock input to the clock generator or pulse switch.
 
-Connect inputs J and K to switches so they can be set to 0 or 1.
+4.Connect inputs J and K to switches so they can be set to 0 or 1.
 
-Connect Q and Q̄ outputs to LEDs or indicators to observe the output state.
+5.Connect Q and Q̄ outputs to LEDs or indicators to observe the output state.
 
-Set J = 0 and K = 0, then apply a clock pulse and note the output Q (should remain unchanged).
+6.Set J = 0 and K = 0, then apply a clock pulse and note the output Q (should remain unchanged).
 
-Set J = 0 and K = 1, apply a clock pulse and observe the output (Q should reset to 0).
+7.Set J = 0 and K = 1, apply a clock pulse and observe the output (Q should reset to 0).
 
-Set J = 1 and K = 0, apply a clock pulse and observe the output (Q should set to 1).
+8.Set J = 1 and K = 0, apply a clock pulse and observe the output (Q should set to 1).
 
-Set J = 1 and K = 1, apply a clock pulse and observe the output toggle (Q becomes complement of previous state).
+9.Set J = 1 and K = 1, apply a clock pulse and observe the output toggle (Q becomes complement of previous state).
 
-Repeat the above steps to verify the JK flip-flop behavior for multiple clock pulses.
+10.Repeat the above steps to verify the JK flip-flop behavior for multiple clock pulses.
 
-Record all observations in a truth table format.
+11.Record all observations in a truth table format.
 
 **PROGRAM**
- module JK_FF(
-    input clk,
-    input j,
-    input k,
-    output reg q,
-    output reg qbar
-);
+
+        module JK_FF(
+        input clk,
+        input j,
+        input k,
+        output reg q,
+        output reg qbar
+    );
     
-always @(posedge clk) begin
+    always @(posedge clk) begin
     if (j == 0 && k == 0) begin
         q <= q;
         qbar <= qbar;
@@ -81,18 +82,22 @@ always @(posedge clk) begin
     else if (j == 1 && k == 1) begin
         q <= ~q;
         qbar <= ~qbar;
+        end
     end
-end
 
-endmodule
+    endmodule
 
 Developed by:PRASANNA.V RegisterNumber:25008398.
 
 
 **RTL LOGIC FOR FLIPFLOPS**
+
 <img width="1919" height="1015" alt="Screenshot 2025-12-14 194337" src="https://github.com/user-attachments/assets/d7a78fc4-2f5f-440c-841f-eda179d34bca" />
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+
 <img width="1914" height="1020" alt="Screenshot 2025-12-14 200210" src="https://github.com/user-attachments/assets/5f366cf0-64e4-4a31-a04a-e8cd947d7337" />
 
 **RESULTS**
+
+implementation of JK flipflop using Verilog and validating their functionality using their functional tables is created successfully
